@@ -1,0 +1,23 @@
+{
+  "name": "devcamper_api",
+  "version": "1.0.0",
+  "description": "DevCamper Backend APi",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "Mahesh",
+    "keswani"
+  ],
+  "author": "Mahesh Keswani",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
