@@ -26,4 +26,4 @@ if(err.name === 'ValidationError')
         error: error.message || 'Server Error'
     })
 }
-module.exports = errorHandler; 
+module.exports = errorHandler;
