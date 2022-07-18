@@ -43,18 +43,6 @@ functionality. All of the functionality below needs to be fully implemented in t
 - Delete course
   * Owner only
   
-### Reviews
-- List all reviews for a bootcamp
-- List all reviews in general
-  * Pagination, filtering, etc
-- Get a single review
-- Create a review
-  * Authenticated users only
-  * Must have the role "user" or "admin" (no publishers)
-- Update review
-  * Owner only
-- Delete review
-  * Owner only
 
 ### Users & Authentication
 - Authentication will be ton using JWT/cookies
@@ -83,32 +71,7 @@ functionality. All of the functionality below needs to be fully implemented in t
   * Admin only
 - Users can only be made admin by updating the database field manually
 
-## Security
-- Encrypt passwords and reset tokens
-- Prevent cross site scripting - XSS
-- Prevent NoSQL injections
-- Add a rate limit for requests of 100 requests per 10 minutes
-- Protect against http param polution
-- Add headers for security (helmet)
-- Use cors to make API public (for now)
 
-## Documentation
-- Use Postman to create documentation
-- Use docgen to create HTML files from Postman
-- Add html files as the / route for the api
-
-## Deployment (Digital Ocean) and ( Heroku )
-- Push to Github
-- Create a droplet - https://m.do.co/c/5424d440c63a
-- Clone repo on to server
-- Use PM2 process manager
-- Enable firewall (ufw) and open needed ports
-- Create an NGINX reverse proxy for port 80
-- Connect a domain name
-- Install an SSL using Let's Encrypt
-## Project Repository
-- [DevCamper Backen Api Repo](https://github.com/mian-ali/devcamper_Nodejs_Express_mongoDB_Api)
-- [DevCamper Frontend Repo](https://github.com/mian-ali/devcamper_frontend_theme)
 ## Code Related Suggestions
 - NPM scripts for dev and production env
 - Config file for important constants
