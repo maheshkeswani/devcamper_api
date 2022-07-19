@@ -1,6 +1,7 @@
 const express = require('express')
 const dotenv  = require('dotenv')
 const morgan = require('morgan')
+const cookiePaser = require('cookie-parser')
 const colors  = require('colors')
 const app = express()
 const errorHandler  = require('./middleware/error')
@@ -9,8 +10,9 @@ app.use(express.json())
 
 const bootcamps = require('./routes/bootcamps')
 const courses = require('./routes/courses')
-const router = require('./routes/bootcamps')
+const user = require('./routes/auth')
 const connectDB = require('./config/db')
+const cookieParser = require('cookie-parser')
 // Load env vars 
 dotenv.config({path:'./config/config.env'})
 // Connect to Database
@@ -21,9 +23,11 @@ if(process.env.NODE_ENV === 'development')
 }
 app.use('/api/v1/bootcamps',bootcamps);
 app.use('/api/v1/courses',courses);
+app.use('/api/v1/user',user);
 app.use(errorHandler);
 
-// app.use( logger )
+// Cookie parser
+app.use(cookieParser());
 
 const PORT  = process.env.PORT || 5000
 

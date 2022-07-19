@@ -5,17 +5,18 @@ const {
   addCourse,
   updateCourse,
   deleteCourse
-}= require('../controller/courses')
+}= require('../controller/courses');
+const { protect,authorize } = require('../middleware/auth');
 const router = express.Router({ mergeParams: true });
 
 // router.route('/radius/:zipcode/:distance').get(getCoursesInRadius);
 
 router.route('/')
 .get(getCourses)
-.post(addCourse)
+.post(protect, authorize('publisher', 'admin'),addCourse)
 
 router.route('/:id')
 .get(getCourse)
-.put(updateCourse)
-.delete(deleteCourse)
+.put(protect, authorize('publisher', 'admin'),updateCourse)
+.delete(protect, authorize('publisher', 'admin'),deleteCourse)
 module.exports = router ;

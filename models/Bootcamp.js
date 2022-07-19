@@ -1,7 +1,7 @@
 const mongoose  = require('mongoose')
 const { default: slugify } = require('slugify')
 const geocoder = require('../utils/gecoder')
-
+const User = require('./User')
 const BootcampSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -96,6 +96,11 @@ jobGuarantee: {
 aceeptGi : {
     type: Boolean,
     default: false,
+},
+user : {
+    type : mongoose.Schema.ObjectId,   
+    ref : "User",
+    required : true,
 },
 createdAt: {
     type: Date,
